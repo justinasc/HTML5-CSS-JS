@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<style>#map {height: 400px;width: 100%;}</style>
+	<title>Tiffinity: Homemade food, delivered!</title>
+	</head>
+	<body>
+		<header>
+		<div class="header-box">
+			<ul class="left-menu">
+				<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+				<li>Currently Serving <br> <strong>Ahmedabad, Gujarat</strong></li>
+			</ul>
+			<div class="logo">
+			<img src="./tiffinity-logo-inverse.svg" alt="">
+			</div>
+			<ul class="right-menu">
+				<li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+				<li>Got Talent? <br> <strong>Become a Chef</strong></li>
+			</ul>
+		</div>
+		</header>
+		
+		<div id="banner">
+			<div class="col-4-4">
+				<div class="banner-text">
+					<div class="banner-content">
+						<h1 class="banner-top">Homemade Food
+							<span>Deliver</span>
+						</h1>
+						<hr class="fancy">
+						<p> Ever dreamed of having homemade food without cooking it yourself? Well, here's your chance!
+							<strong>We'll bring it right to your mouth.</strong>
+						</p>
+						<p>
+							<button class="banner-button">SEE THE MENU</button>
+						</p>
+						<div class="banner-bottom">
+							<h4>Order <strong>lunch</strong> by 10:30am & <strong>dinner</strong> by 6:30pm</h4>
+							<h5><strong>Ahmedabad, Gujarat Only. Please ask for our delivery zones.</strong></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<div class="banner2">
+		  <div class="banner-title">
+			<h3 class="banner-top2">What We Offer</h3>
+			<div class="col-3-4">
+			  <div class="banner-content2">
+				  <img src="./ico_glove.svg" alt="">
+				  <h5>Homemade Food</h5>
+				<p>Our chefs make your food fresh and from scratch - just like they do for their own family. It takes time so please order ahead!</p>
+			  </div>
+			  <div class="banner-content2">
+				  <img src="./ico_lettuc.svg" alt="">
+				  <h5>Lots of Choices</h5>
+				<p>From the state-by-state native cuisines to an eclectic mix of pastas and desserts. You'll never be stuck with <em>that one meal</em>.</p>
+			  </div>
+			  <div class="banner-content2">
+				  <img src="./ico_delivery.svg" alt="">
+				  <h5>Free Home Delivery</h5>
+				<p>Our price includes free home delivery in the West Ahmedabad region (see the map below). <br><br> <small><sup>*</sup>We may be able to fulfill orders farther out with a nominal charge.</small></p>
+			  </div>
+			</div>
+		  </div>
+		</div>	
+		
+	<div class="banner3">
+	  <div class="banner-title2">
+		<h3 class="banner-top3">How It Works</h3>
+		<div class="col-1-4">
+		  <div class="banner-content3">
+			<div class="banner3-img">
+			  <img src="./how-1.svg" alt="">
+			</div>
+			<div class="banner-content3-top">
+			  <span>1</span>
+			  <h5>Browse Our
+				<br>
+				Pre-Order Menu</h5>
+			</div>
+			<p>Surf a wide variety of foods - from the everyday items to exotic dishes that are hard to find in any restaurant.</p>
+		  </div>
+			  <div class="banner-content3">
+				<div class="banner3-img">
+				  <img src="./how-2.svg" alt="">
+				</div>
+				<div class="banner-content3-top">
+				  <span>2</span>
+				  <h5>Select something
+				<br> you'd like to order</h5>
+				</div>
+				<p>In terms of quantity, most items are designed to serve one person. Any items with higher quantity are clearly marked.</p>
+			  </div>
+				  <div class="banner-content3">
+					<div class="banner3-img">
+					  <img src="./how-3.svg" alt="">
+					</div>
+					<div class="banner-content3-top">
+					  <span>3</span>
+					  <h5>Fill out the
+						<br>Pre-Order details</h5>
+					</div>
+					<p>We deliver within a large region from the riverside to SG Highway. After your order is placed, we must confirm with the chef.</p>
+				  </div>
+					  <div class="banner-content3">
+						<div class="banner3-img">
+						  <img src="./how-4.svg" alt="">
+						</div>
+						<div class="banner-content3-top">
+						  <span>4</span>
+						  <h5>Enjoy your freshly
+							<br>delivered food!</h5>
+						</div>
+						<p>And afterwards, feel free to send us a review by email or text. Online reviews are coming soon!</p>
+					  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<div class="banner-map">
+		<div class="banner-container">
+			<div class="banner-top4">
+				<h3>Our Delivery Zone<sup>*</sup></h3>
+				<span>Our delivery zone is not 100% accurate. We may be able to deliver in additional areas with an extra delivery charge. If you're not sure, just ask!</span>
+			</div>
+				<div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+		</div>
+	</div>
+<hr>
+	<div class="last-banner">
+		<div class="banner-container banner-top">
+			<h2 style="margin-top: 0">Sounds Good?</h2> 
+			<button class="banner-button">SEE THE MENU</button>
+		</div>
+	</div>
+
+	<div class="slider" id="main-slider"><!-- outermost container element -->
+		<div class="slider-wrapper"><!-- innermost wrapper element -->
+			<img src="http://hellodoktor.com/wp-content/uploads/2016/12/shutterstock_531377617-1024x400.jpg" alt="First" class="slide" /><!-- slides -->
+			<img src="http://hellodoktor.com/wp-content/uploads/2017/01/bad-foods-for-liver-1024x400.jpg" alt="Second" class="slide" />
+			<img src="http://greatfooduk.com/wp-content/uploads/2014/11/range-scrolling-recipes-21.jpg" alt="Third" class="slide" />
+		</div>
+	</div>
+<hr>
+<a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up"></i></a>
+<script src="script.js"></script>
+
+	<footer class="footer">
+		<div class="footer1">
+		  <div class="footer-body">
+			<div class="col-2-4">
+			  <div class="footer-logo">
+				<img src="./tiffinity-logo-inverse.svg" class="footer-left">
+			  </div>
+			  <div class="footer-text">
+				<ul class="footer-links">
+
+				  <li>About</li>
+				  <li>Become a Chef</li>
+				  <li>Support</li>
+				  <li>Contact</li>
+				  <div class="clearfix"> <!-- patikrint ka daro -->
+
+				  </div>
+				</ul>
+			  </div>
+			  <div class="footer-items">
+				<div class="footer-social footer-right">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+				</div>
+			  </div>
+			</div>
+
+			<div class="footer-center">
+			  <h5>SMS Partners</h5>
+			 <img src="./msg91Badge.png">
+			</div>
+		  </div>
+		</div>
+		
+		<div class="footer2">
+		  <div class="footer-body">
+			<div class="col-2-4">
+			  <div class="footer-body2 footer-text-left">
+				<p>Homemade. Because there's no place like home.</p>
+			  </div>
+			  <div class="footer-body3">
+				<div class="footer-right">
+				  <li>PRIVACY POLICY</li>
+				  <li>TERMS AND CONDITIONS</li>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</footer>
+		
+	</body>
+</html>
